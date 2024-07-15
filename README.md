@@ -32,7 +32,9 @@ Specifically,
 * change the backbones by changing
     
     --gpt_type gpt2
+
     --vit_type google/vit-base-patch16-224-in21k
+    
     * Note: backbone models with different dimensions for hidden states can also be used, if one changes the model class a bit.
 
 * whether use pooled output from ViT:
@@ -54,8 +56,11 @@ Specifically,
 * changing routing function types:
 
     --element_add ($x_t + x'_v$)
+
     --element_mul ($x_t \circ x'_v$)
+    
     --element_mul_expand ($x_t  x''_v$)
+    
     --vllora ($x_t (x_v)^T  x_v$)
 
 * control where to add Adapters
