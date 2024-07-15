@@ -1,5 +1,5 @@
 #!/bin/sh
-CUDA_VISIBLE_DEVICES=0 torchrun --nproc_per_node=1 --master_port 26113 train_vit_gpt.py \
+CUDA_VISIBLE_DEVICES=0 torchrun --nproc_per_node=1 --master_port 26113 ../train_vit_gpt.py \
 --base configs/coco_task.yaml configs/lora_vl.yaml configs/vit_gpt_task.yaml \
 --out_dir OUTPUT_DIR \
 --train_batch_size 40 \
