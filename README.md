@@ -2,7 +2,7 @@
 Official code for [Introducing Routing Functions to Vision-Language Parameter-Efficient Fine-Tuning with Low-Rank Bottlenecks](https://arxiv.org/abs/2403.09377) (ECCV2024)
 
 
-![](figures/method.png)
+![](figures/routingvl.png)
 
 * The main code (ViT+RoBERTa/GPT) for our paper is released.
 
