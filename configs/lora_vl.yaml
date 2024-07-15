@@ -1,0 +1,15 @@
+lora:
+  target: loralib.layers.MergedLinearOnlyVLBeforeB
+  params:
+    r_lora: 128
+    lora_alpha: 128
+    lora_dropout: 0.1
+    enable_lora: [True, False, True]
+    fan_in_fan_out: True
+    merge_weights: False
+    add_relu: False
+    element_mul: False
+    element_add: False
+    element_mul_expand: False
+    routing_xt: False
+    use_routing: True

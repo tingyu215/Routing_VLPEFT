@@ -1,0 +1,18 @@
+model:
+  params:
+    roberta_type: roberta-base
+    vit_type: google/vit-large-patch16-224-in21k
+
+
+run:
+  params:
+    lr: 1e-4
+    warmup_steps: 0.05
+    train_batch_size: 40
+    val_batch_size: 40
+    out_dir: OUTPUT_DIR/routingVL
+    num_gpus: 1
+    epoch: 100
+    save_every: 10
+    project_name: routingVL
+    experiment_name: routing_vit_roberta

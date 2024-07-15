@@ -1,0 +1,18 @@
+model:
+  params:
+    gpt_type: gpt2
+    vit_type: google/vit-base-patch16-224
+
+
+run:
+  params:
+    lr: 3e-5
+    warmup_steps: 5000
+    train_batch_size: 40
+    val_batch_size: 40
+    out_dir: OUTPUT_DIR/routingVL
+    num_gpus: 1
+    epoch: 100
+    save_every: 10
+    project_name: routingVL
+    experiment_name: vllora_vit_gpt

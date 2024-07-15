@@ -1,0 +1,35 @@
+task:
+  train_data_config:
+    target: data.coco_dataset.COCOCLIPDataset
+    params:
+        split: train
+        data_root: DATAROOT/MSCOCO
+        version: _karpathy
+        tokenizer: gpt2
+        img_version: 2014
+        prefix_length:  1
+        max_len: 50
+  
+  val_data_config:
+    target: data.coco_dataset.COCOCLIPDataset
+    params:
+        split: val
+        data_root: DATAROOT/MSCOCO
+        version: _karpathy
+        tokenizer: gpt2
+        img_version: 2014
+        prefix_length:  1
+        max_len: 50
+
+  
+  test_data_config:
+    target: data.coco_dataset.COCOCLIPDataset
+    params:
+        split: test
+        data_root: DATAROOT/MSCOCO
+        version: _karpathy
+        img_version: 2014
+        img_split: val
+        tokenizer: gpt2
+        prefix_length: 1
+        max_len: 50

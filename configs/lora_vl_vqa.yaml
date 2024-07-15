@@ -1,0 +1,23 @@
+lora:
+  target: loralib.layers_encoder.VLLinearSplit, loralib.layers_encoder.VLLinear
+  params:
+    apply_lora: True
+    r_lora: 128
+    lora_alpha: 128
+    lora_dropout: 0.1
+    fan_in_fan_out: True
+    merge_weights: False
+    split_type: split
+    add_relu: False
+    num_heads_lora: 4
+    num_labels: 3129
+    lora_split: False # whether use routing with splitA
+    use_routing: False # otherwise use conventional lora
+    element_mul: False
+    element_add: False
+    element_mul_expand: False
+    routing_xt: False
+    add_res: False
+    freeze_ln: False
+    use_noise_vis: False
+    use_ones_vis: False

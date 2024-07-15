@@ -1,0 +1,46 @@
+task:
+  train_data_config:
+    target: data.vqa_data.VQAFineTuneDataset
+    params:
+        train_split: train
+        rank: -1
+        topk: -1
+        verbose: True
+        mode: train
+        max_length: 20
+        use_vis_prefix: True
+        prefix_length: 1
+        vqa_dir: DATAROOT/VQAv2
+        image_dir: DATAROOT/MSCOCO/Images
+        use_classifier: True
+  
+  val_data_config:
+    target: data.vqa_data.VQAFineTuneDataset
+    params:
+        val_split: valid
+        rank: -1
+        topk: -1
+        verbose: True
+        mode: valid
+        max_length: 20
+        use_vis_prefix: True
+        prefix_length: 1
+        vqa_dir: DATAROOT/VQAv2
+        image_dir: DATAROOT/MSCOCO/Images
+        use_classifier: True
+
+  
+  test_data_config:
+    target: data.vqa_data.VQAFineTuneDataset
+    params:
+        test_split: test
+        rank: -1
+        topk: -1
+        verbose: True
+        mode: train
+        max_length: 20
+        use_vis_prefix: False
+        prefix_length: 1
+        vqa_dir: DATAROOT/VQAv2
+        image_dir: DATAROOT/MSCOCO/Images
+        use_classifier: True

@@ -1,0 +1,12 @@
+lora:
+  target: loralib.layers.MergedLinearSplit, loralib.layers.MergedLinearSplitMerge, loralib.layers.MergedLinearSplitAttn
+  params:
+    r_lora: 128
+    lora_alpha: 128
+    lora_dropout: 0.1
+    enable_lora: [True, False, True]
+    fan_in_fan_out: True
+    merge_weights: False
+    split_type: split
+    add_relu: False
+    num_heads_lora: 4
