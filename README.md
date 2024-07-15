@@ -26,29 +26,48 @@ To train ViT+RoBERTa/GPT, (taking ViT+GPT using Adapter for example) please run
 
 Specifically,
 * change the output dir by changing
+
     --output_dir OUTPUT_DIR
+
 * change the backbones by changing
+    
     --gpt_type gpt2
     --vit_type google/vit-base-patch16-224-in21k
     * Note: backbone models with different dimensions for hidden states can also be used, if one changes the model class a bit.
+
 * whether use pooled output from ViT:
+    
     --vit_use_pooler
+
 * determine where to add routing functions:
+    
     --merge_type beforeB (or afterB)
+
 * specificy layers to inject PEFT modules:
+
     --fusion_layer
+
 * where to use routing functions:
+
     ----use_routing
+
 * changing routing function types:
+
     --element_add ($x_t + x'_v$)
     --element_mul ($x_t \circ x'_v$)
     --element_mul_expand ($x_t  x''_v$)
     --vllora ($x_t (x_v)^T  x_v$)
+
 * control where to add Adapters
+
     ----adapt_pos
+
 * only use conventional LoRA:
+
     ----all_lora
+
 * do not use visual prefix to textual input:
+
     --no_vis_prefix
 
 and more
