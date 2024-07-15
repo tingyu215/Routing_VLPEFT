@@ -1,7 +1,7 @@
 # Routing_VLPEFT
-Official code for Introducing Routing Functions to Vision-Language Parameter-Efficient Fine-Tuning with Low-Rank Bottlenecks (ECCV2024)
+Official code for [Introducing Routing Functions to Vision-Language Parameter-Efficient Fine-Tuning with Low-Rank Bottlenecks](https://arxiv.org/abs/2403.09377) (ECCV2024)
 
-The main code (ViT+RoBERTa/GPT) for our paper is released.
+* The main code (ViT+RoBERTa/GPT) for our paper is released.
 
 ## Installation
 To create conda env, please run:
