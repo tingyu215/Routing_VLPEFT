@@ -1,4 +1,4 @@
-name: pytorch20
+name: routingvl
 channels:
   - pytorch
   - nvidia
