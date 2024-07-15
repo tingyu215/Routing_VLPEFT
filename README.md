@@ -34,7 +34,7 @@ Specifically,
     --gpt_type gpt2
 
     --vit_type google/vit-base-patch16-224-in21k
-    
+
     * Note: backbone models with different dimensions for hidden states can also be used, if one changes the model class a bit.
 
 * whether use pooled output from ViT:
@@ -51,7 +51,7 @@ Specifically,
 
 * where to use routing functions:
 
-    ----use_routing
+    --use_routing
 
 * changing routing function types:
 
@@ -65,11 +65,11 @@ Specifically,
 
 * control where to add Adapters
 
-    ----adapt_pos
+    --adapt_pos
 
 * only use conventional LoRA:
 
-    ----all_lora
+    --all_lora
 
 * do not use visual prefix to textual input:
 
