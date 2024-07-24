@@ -13,7 +13,7 @@ To create conda env, please run:
     conda activate routingvl
 
 ## Data
-Please download MSCOCO and VQAv2 datasets and store them under *DATAROOT*/MSCOCO and *DATAROOT*/VQAv2 respectively. *DATAROOT* is the root directory for datasets of your choice.
+Please download MSCOCO and VQAv2 datasets and store them under `DATAROOT/MSCOCO` and `DATAROOT/VQAv2` respectively. `DATAROOT` is the root directory for datasets of your choice.
 
 ## Training
 Before running training scripts, check if you need to modify the dirs for datasets/output in the configs folder
@@ -28,55 +28,34 @@ To train ViT+RoBERTa/GPT, (taking ViT+GPT using Adapter for example) please run
     bash run_vit_gpt_adapter.sh
 
 Specifically,
-* change the output dir by changing
+* change the output dir by changing `--output_dir OUTPUT_DIR`
 
-    --output_dir OUTPUT_DIR
-
-* change the backbones by changing
-    
-    --gpt_type gpt2
-
-    --vit_type google/vit-base-patch16-224-in21k
-
+* change the backbones by changing `--gpt_type gpt2` and `--vit_type google/vit-base-patch16-224-in21k`
     * Note: backbone models with different dimensions for hidden states can also be used, if one changes the model class a bit.
 
-* whether use pooled output from ViT:
-    
-    --vit_use_pooler
+* whether use pooled output from ViT: `--vit_use_pooler`
 
-* determine where to add routing functions:
-    
-    --merge_type beforeB (or afterB)
+* determine where to add routing functions: `--merge_type beforeB (or afterB)`
 
-* specificy layers to inject PEFT modules:
+* specificy layers to inject PEFT modules: `--fusion_layer`
 
-    --fusion_layer
-
-* where to use routing functions:
-
-    --use_routing
+* where to use routing functions: `--use_routing`
 
 * changing routing function types:
 
-    --element_add ($x_t + x'_v$)
+    `--element_add ($x_t + x'_v$)`
 
-    --element_mul ($x_t \circ x'_v$)
+    `--element_mul ($x_t \circ x'_v$)`
     
-    --element_mul_expand ($x_t  x''_v$)
+    `--element_mul_expand ($x_t  x''_v$)`
     
-    --vllora ($x_t (x_v)^T  x_v$)
+    `--vllora ($x_t (x_v)^T  x_v$)`
 
-* control where to add Adapters
+* control where to add Adapters: `--adapt_pos`
 
-    --adapt_pos
+* only use conventional LoRA: `--all_lora`
 
-* only use conventional LoRA:
-
-    --all_lora
-
-* do not use visual prefix to textual input:
-
-    --no_vis_prefix
+* do not use visual prefix to textual input: `--no_vis_prefix`
 
 and more
 
@@ -91,7 +70,7 @@ Run evaluation on COCO Cap.:
     bash run_vit_gpt_test.sh
     bash eval_coco.sh
 
-Please change the OUTPUT_DIR and --model_name (name of the saved ckpt) accordingly.
+Please change the `OUTPUT_DIR` and `--model_name` (name of the saved ckpt) accordingly.
 
 
 ## Citation
